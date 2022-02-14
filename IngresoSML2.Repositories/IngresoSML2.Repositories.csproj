@@ -1,7 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IngresoSML2.Entities\IngresoSML2.Entities.csproj" />
+    <ProjectReference Include="..\IngresoSML2.Interfaces\IngresoSML2.Interfaces.csproj" />
+  </ItemGroup>
 
 </Project>

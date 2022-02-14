@@ -1,8 +1,11 @@
-﻿using System;
+﻿using IngresoSML2.Entities;
+using System;
+using System.Collections.Generic;
 
 namespace IngresoSML2.Interfaces
 {
-    public class InvoiceInterface
+    public interface InvoiceInterface
     {
+        IEnumerable<Customer> GetAllCustomers();
     }
 }

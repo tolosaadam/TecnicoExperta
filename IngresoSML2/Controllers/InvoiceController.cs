@@ -1,5 +1,7 @@
-﻿using IngresoSML2.Data;
-using IngresoSML2.Models;
+﻿
+using IngresoSML2.Business;
+using IngresoSML2.Entities;
+using IngresoSML2.Entities.DTOS;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -14,18 +16,19 @@ namespace IngresoSML2.Controllers
     [ApiController]
     public class InvoiceController : ControllerBase
     {
-        private readonly AppDbContext dbContext;
+        private readonly InvoiceBusiness _business;
 
-        public InvoiceController(AppDbContext dbContext)
+        public InvoiceController(InvoiceBusiness business)
         {
-            this.dbContext = dbContext;
+            _business = business;
         }
 
+
         [HttpPost]
-        public async Task<IActionResult> Add([FromBody] InvoicePostModel pm)
+        public async Task<IActionResult> Add([FromBody] InvoiceDTO pm)
         {
             // TODO
-            return Ok("OK");
+            return Ok(_business.GetAllCustomers());
         }
 
         //[HttpGet]

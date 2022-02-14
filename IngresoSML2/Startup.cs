@@ -1,4 +1,9 @@
-using IngresoSML2.Data;
+using AutoMapper;
+using IngresoSML2.Business;
+using IngresoSML2.Entities;
+using IngresoSML2.Interfaces;
+using IngresoSML2.MapperProfiles;
+using IngresoSML2.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +27,7 @@ namespace IngresoSML2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<AppDbContext>(options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.17-mysql")));
             services.AddCors(options =>
             {
                 options.AddPolicy("_corsCrossPort", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
@@ -36,8 +42,16 @@ namespace IngresoSML2
                     Version = "v1"
                 });
             });
-            services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("Test"));
-              }
+            services.AddMvc();
+            services.AddScoped<InvoiceBusiness>();
+            services.AddScoped<InvoiceInterface, InvoiceRepository>();
+            var config = new MapperConfiguration(cfg => {
+                cfg.AddProfile(new InvoiceProfiles());
+            });
+
+            IMapper mapper = config.CreateMapper();
+            services.AddSingleton(mapper);
+        }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

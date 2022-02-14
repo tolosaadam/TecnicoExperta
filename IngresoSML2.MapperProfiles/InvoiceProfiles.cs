@@ -1,8 +1,9 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 
 namespace IngresoSML2.MapperProfiles
 {
-    public class InvoiceProfiles
+    public class InvoiceProfiles : Profile
     {
     }
 }
