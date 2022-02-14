@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IngresoSML2.MapperProfiles"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{DD1139DD-25E2-4C8C-8D09-3825881B9103}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IngresoSML2.UnitTests", "..\IngresoSML2.UnitTests\IngresoSML2.UnitTests.csproj", "{D71063AE-5765-4FDB-9D05-AEB4AD4149D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{DD1139DD-25E2-4C8C-8D09-3825881B9103}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD1139DD-25E2-4C8C-8D09-3825881B9103}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD1139DD-25E2-4C8C-8D09-3825881B9103}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D71063AE-5765-4FDB-9D05-AEB4AD4149D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D71063AE-5765-4FDB-9D05-AEB4AD4149D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D71063AE-5765-4FDB-9D05-AEB4AD4149D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D71063AE-5765-4FDB-9D05-AEB4AD4149D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

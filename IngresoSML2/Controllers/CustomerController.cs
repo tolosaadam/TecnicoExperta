@@ -20,9 +20,8 @@ namespace IngresoSML2.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetCustomer()
+        public IActionResult GetCustomer()
         {
-            // TODO
             return Ok(_business.GetAllCustomers());
         }
     }
