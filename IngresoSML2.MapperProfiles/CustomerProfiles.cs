@@ -3,16 +3,16 @@ using IngresoSML2.Entities;
 using IngresoSML2.Entities.DTOS;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Text;
 
 namespace IngresoSML2.MapperProfiles
 {
-    public class InvoiceProfiles : Profile
+    public class CustomerProfiles : Profile
     {
-        public InvoiceProfiles()
+        public CustomerProfiles()
         {
-            CreateMap<Invoice, InvoiceDTO>();
-            CreateMap<InvoiceDTO, Invoice>();
+            CreateMap<Customer, CustomerDTO>();
+            CreateMap<CustomerDTO, Customer>();
         }      
-    }   
+    }
 }

@@ -23,23 +23,11 @@ namespace IngresoSML2.Controllers
             _business = business;
         }
 
-
         [HttpPost]
-        public async Task<IActionResult> Add([FromBody] InvoiceDTO pm)
+        public IActionResult Add([FromBody] InvoiceDTO iDTO)
         {
-            // TODO
-            return Ok(_business.GetAllCustomers());
+            return Ok(_business.ManageInvoice(iDTO));
         }
-
-        //[HttpGet]
-        //public IActionResult GetMultas()
-        //{
-        //    _logger.LogInformation("GetAllMultas  From Controller");
-        //    return Ok(_business.GetLists());
-        //}
-
-
-
 
     }
 }

@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\IngresoSML2.Entities\IngresoSML2.Entities.csproj" />
     <ProjectReference Include="..\IngresoSML2.Interfaces\IngresoSML2.Interfaces.csproj" />
   </ItemGroup>

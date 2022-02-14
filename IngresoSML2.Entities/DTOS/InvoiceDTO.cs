@@ -15,7 +15,6 @@ namespace IngresoSML2.Entities.DTOS
 
         public List<String> Codes { get; set; }
 
-
     }
 
 }

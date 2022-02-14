@@ -44,9 +44,16 @@ namespace IngresoSML2
             });
             services.AddMvc();
             services.AddScoped<InvoiceBusiness>();
-            services.AddScoped<InvoiceInterface, InvoiceRepository>();
+            services.AddScoped<IInvoiceInterface, InvoiceRepository>();
+            services.AddScoped<CustomerBusiness>();
+            services.AddScoped<ICustomerInterface, CustomerRepository>();
+            services.AddScoped<InvoiceItemsBusiness>();
+            services.AddScoped<IInvoiceItemsInterface, InvoiceItemsRepository>();
+
+
             var config = new MapperConfiguration(cfg => {
                 cfg.AddProfile(new InvoiceProfiles());
+                cfg.AddProfile(new CustomerProfiles());
             });
 
             IMapper mapper = config.CreateMapper();

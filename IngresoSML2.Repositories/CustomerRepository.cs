@@ -7,33 +7,33 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace IngresoSML2.Repositories
 {
-    public class InvoiceRepository: IInvoiceInterface
+    public class CustomerRepository : ICustomerInterface
     {
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
-        private readonly ILogger<InvoiceRepository> _logger;
-        public InvoiceRepository(AppDbContext context, IMapper mapper, ILogger<InvoiceRepository> logger)
+        private readonly ILogger<CustomerRepository> _logger;
+        public CustomerRepository(AppDbContext context, IMapper mapper, ILogger<CustomerRepository> logger)
         {
             _context = context;
             _mapper = mapper;
             _logger = logger;
         }
 
-        public int AddInvoice(Invoice invoice)
+        public IEnumerable<CustomerDTO> GetAllCustomers()
         {
-           
             try
             {
-                _context.Invoices.Add(invoice);
-                _context.SaveChanges();
-                return invoice.Id;
+                var Customers = _context.Customers.ProjectTo<CustomerDTO>(_mapper.ConfigurationProvider).ToList();
+
+                return Customers;
             }
             catch (Exception ex)
             {
-                _logger.LogError($"AddInvoice TO 'DATABASE' ERROR = {ex} ");
+                _logger.LogInformation($"GetAllCustomers TO 'DATABASE'  ERROR = {ex} ");
                 throw new Exception(ex.Message);
             }
         }
