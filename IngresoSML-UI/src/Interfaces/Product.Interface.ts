@@ -1,3 +1,6 @@
 export interface ProductI {
-    code:string
+    product:string
+}
+export interface ProductTableI{
+    products:ProductI[]
 }

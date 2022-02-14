@@ -1,6 +1,5 @@
-import { ProductI } from "./Product.Interface";
-
 export interface ClientGetI {
-    id:number,
-    name:string
+    customerId:number,
+    firstName:string,
+    lastName:string
 }
