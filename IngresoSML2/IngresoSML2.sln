@@ -5,9 +5,15 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IngresoSML2", "IngresoSML2.csproj", "{4C65F06A-CC5C-4A55-AC39-0B05F9EF834E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IngresoSML2.Business", "..\IngresoSML2.Business\IngresoSML2.Business.csproj", "{3C8EB39E-FC52-4A7E-BD80-55E4C271EF78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IngresoSML2.Business", "..\IngresoSML2.Business\IngresoSML2.Business.csproj", "{3C8EB39E-FC52-4A7E-BD80-55E4C271EF78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IngresoSML2.Entities", "..\IngresoSML2.Entities\IngresoSML2.Entities.csproj", "{E254ED07-3B3B-4D57-9429-B89FA0EF867B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IngresoSML2.Entities", "..\IngresoSML2.Entities\IngresoSML2.Entities.csproj", "{E254ED07-3B3B-4D57-9429-B89FA0EF867B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IngresoSML2.Interfaces", "..\IngresoSML2.Interfaces\IngresoSML2.Interfaces.csproj", "{1BFB7C24-A61B-481A-BD02-5C70BCDE3A4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IngresoSML2.Repositories", "..\IngresoSML2.Repositories\IngresoSML2.Repositories.csproj", "{B6E25431-3271-40DD-A1C8-8D328D3A6DF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IngresoSML2.MapperProfiles", "..\IngresoSML2.MapperProfiles\IngresoSML2.MapperProfiles.csproj", "{EBBAACF7-01AC-47F5-8ED4-142216404A46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,18 @@ Global
 		{E254ED07-3B3B-4D57-9429-B89FA0EF867B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E254ED07-3B3B-4D57-9429-B89FA0EF867B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E254ED07-3B3B-4D57-9429-B89FA0EF867B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BFB7C24-A61B-481A-BD02-5C70BCDE3A4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BFB7C24-A61B-481A-BD02-5C70BCDE3A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BFB7C24-A61B-481A-BD02-5C70BCDE3A4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BFB7C24-A61B-481A-BD02-5C70BCDE3A4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6E25431-3271-40DD-A1C8-8D328D3A6DF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6E25431-3271-40DD-A1C8-8D328D3A6DF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6E25431-3271-40DD-A1C8-8D328D3A6DF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6E25431-3271-40DD-A1C8-8D328D3A6DF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBBAACF7-01AC-47F5-8ED4-142216404A46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBBAACF7-01AC-47F5-8ED4-142216404A46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBBAACF7-01AC-47F5-8ED4-142216404A46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBBAACF7-01AC-47F5-8ED4-142216404A46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

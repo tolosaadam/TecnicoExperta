@@ -2,7 +2,7 @@
 
 namespace IngresoSML2.Business
 {
-    public class Class1
+    public class InvoiceBusiness
     {
     }
 }
