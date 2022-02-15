@@ -35,7 +35,7 @@ namespace IngresoSML2.Business
                 InvoiceItem it = new InvoiceItem()
                 {
                     InvoiceId = id,
-                    ProductCode = item.Product
+                    ProductCode = item.CodeName
                 };
                 items.Add(it);
             }

@@ -8,7 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { ProductI, ProductTableI } from '../Interfaces/Product.Interface';
 import { Button, TextField, Typography } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FieldProps } from 'formik';
 
 
@@ -16,19 +16,22 @@ import { FieldProps } from 'formik';
 // const rows:ProductI[] = [
 
 // ]
-export default function BasicTable({products, field}:ProductTableI & FieldProps) {
-    // const [products, setProducts] = useState<ProductI[]>([{code:''}]);
+export default function BasicTable({codeNames}:ProductTableI) {
 
-    const deleteItem = (product:ProductI)=>{
-
-      // console.log(product);
-      const index = products.indexOf(product)
-
-      if (index > -1) {
-        products.splice(index, 1);
-      }
+  const [rows2, setRows] = useState([
+    {
+      codeName: "",
     }
+  ]);
 
+  const deleteItem = (row:any)=>{
+
+    const newState = [...codeNames]
+    const index = codeNames.indexOf(row)
+    codeNames.splice(index,1)
+    setRows(newState)
+  }
+  
     return (
       <TableContainer sx={{ mt:10}}>
         <Table sx={{ maxWidth: 700 }} aria-label="Product Table">
@@ -39,26 +42,29 @@ export default function BasicTable({products, field}:ProductTableI & FieldProps)
             </TableRow>
           </TableHead>
           <TableBody>
-            {products.length === 0 
+            {codeNames.length !== 0
             ? 
-              <Typography sx={{ m:2 , fontSize:18, color:'GrayText' }} >
-                No data 
-            </Typography>
-            :
-            products.map((product) => (
+            codeNames.map((code) => (
               <TableRow
-                key={product.product}
+                key={code.codeName}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                {...field}
               >
                 <TableCell component="th" align="center" scope="row">
-                  {product.product}
+                  {code.codeName}
                 </TableCell>
                 <TableCell align="center">
-                  <Button variant="text" onClick={ ()=> deleteItem( product) }>Delete</Button>
+                  <Button variant="text" id="codes" onClick={ ()=> deleteItem(code) }>Delete</Button>
                 </TableCell>
               </TableRow>
-            ))}
+              
+            ))
+            :
+            <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                <TableCell component="th" scope="row" sx={{ m:2 , fontSize:18, color:'GrayText' }} >
+                No data 
+              </TableCell>
+            </TableRow>
+          }
           </TableBody>
         </Table>
       </TableContainer>

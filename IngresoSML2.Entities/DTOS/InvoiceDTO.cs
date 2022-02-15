@@ -15,13 +15,11 @@ namespace IngresoSML2.Entities.DTOS
         public int CustomerId { get; set; }
 
         public List<Code> Codes { get; set; }
-        public string Product { get; set; }
-
     }
 
     public class Code
     {
-        public string Product { get; set; } 
+        public string CodeName { get; set; } 
     }
 
 }

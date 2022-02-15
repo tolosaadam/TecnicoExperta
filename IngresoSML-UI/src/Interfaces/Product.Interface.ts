@@ -1,6 +1,6 @@
 export interface ProductI {
-    product:string
+    codeName:string
 }
 export interface ProductTableI{
-    products:ProductI[]
+    codeNames:ProductI[];
 }

@@ -41,7 +41,7 @@ export const UsePostForm = () => {
 
         var config = {
         method: 'post',
-        url: 'https://localhost:51583/api/invoice',
+        url: 'https://localhost:58514/api/invoice',
         headers: { 
             'Content-Type': 'application/json'
         },
@@ -60,6 +60,15 @@ export const UsePostForm = () => {
                          width: '400px',
                          timer: 3000
                      })
+                 }else{
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'error',
+                        title: `The invoice cant be created`,
+                        showConfirmButton: false,
+                        width: '400px',
+                        timer: 3000
+                    })
                  }
              })
 

@@ -1,13 +1,12 @@
 .input{
     width:80%;
-    
 }
 
 .container-form{
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
 
 .title{

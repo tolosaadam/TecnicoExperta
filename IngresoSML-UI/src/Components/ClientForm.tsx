@@ -5,8 +5,9 @@ import { UseCustomer } from '../Hooks/UseCustomer';
 import { ClientPostI } from '../Interfaces/ClientPost.interface';
 import { ProductI, ProductTableI } from '../Interfaces/Product.Interface';
 import ProductTable from './ProductTable';
-import './clientForm.css'
+import './clientForm.css';
 import { UsePostForm } from '../Hooks/UsePostForm';
+import Swal from 'sweetalert2';
 
 export const ClientForm = () => {
 
@@ -20,11 +21,33 @@ export const ClientForm = () => {
   }, [])
 
   const addProduct = ( product:any ) =>{
+    let flag = false
 
-    products.push({product:product})
-    // console.log(products);
-    setProducts( products );
+    products.forEach(function (value) {
+      if(value.codeName === product){
+        flag = true
+      }
+    }); 
+
+
+    if(flag === false){
+
+      products.push({codeName: product}) 
+      setProducts( products );
+
+    }else{
+
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: "The code has already exist",
+        showConfirmButton: false,
+        width: '400px',
+        timer: 3000
+    })
+    }
   }
+
   
   return (
     <div className='container-form'>
@@ -61,12 +84,12 @@ export const ClientForm = () => {
                 <Field name="product" placeholder="Agregar un producto" className="input"/>
                 <Button variant="outlined" sx={{ ml:2}} onClick={ ()=>{ 
                                         addProduct( values.product )
-
+                                        setFieldValue('product', '')
                                         setFieldValue('codes',  products)
                                         }}> Add </Button>
               </section>
               
-              <Field component={ProductTable} name="codes" products={products} />
+              <Field component={ProductTable} name="codes" codeNames={products} />
 
                <Button variant="outlined" type='submit'  style={{ width:600, marginTop:20}}> Send </Button>
 

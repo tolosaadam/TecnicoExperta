@@ -6,7 +6,7 @@ export const UseCustomer = () => {
     const [customers, setCustomers] = useState<ClientGetI[]>([{customerId:0, firstName:'', lastName:''}])
 
     const GetCustomers = () => {
-        axios.get('https://localhost:51583/api/customer')
+        axios.get('https://localhost:58514/api/customer')
         .then(response => {
             setCustomers(response.data)
         })
