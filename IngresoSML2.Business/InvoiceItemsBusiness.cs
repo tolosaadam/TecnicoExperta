@@ -30,12 +30,12 @@ namespace IngresoSML2.Business
         {
             List<InvoiceItem> items = new List<InvoiceItem>();
 
-            foreach (string item in iDTO.Codes)
+            foreach (Code item in iDTO.Codes)
             {
                 InvoiceItem it = new InvoiceItem()
                 {
                     InvoiceId = id,
-                    ProductCode = item
+                    ProductCode = item.Product
                 };
                 items.Add(it);
             }
