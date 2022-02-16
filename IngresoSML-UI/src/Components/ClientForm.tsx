@@ -20,6 +20,14 @@ export const ClientForm = () => {
     GetCustomers()     
   }, [])
 
+
+  const resetTable = ()=>{
+
+    const newState: React.SetStateAction<ProductI[]> = []
+    setProducts(newState)
+  }
+
+
   const addProduct = ( product:any ) =>{
     let flag = false
 
@@ -28,7 +36,6 @@ export const ClientForm = () => {
         flag = true
       }
     }); 
-
 
     if(flag === false){
 
@@ -52,7 +59,7 @@ export const ClientForm = () => {
   return (
     <div className='container-form'>
       <section className='title' >
-        <h1>Invoices</h1>
+        <h1>Invoices</h1>       
       </section >
       <Formik
         initialValues={{
@@ -62,19 +69,25 @@ export const ClientForm = () => {
         }}
         onSubmit={(
           values: ClientPostI,
-          { setSubmitting }: FormikHelpers<ClientPostI>
+          { setSubmitting, resetForm }: FormikHelpers<ClientPostI>
         ) => {
-
-          alert(JSON.stringify(values,null,2))
           postInvoice(values)
           setSubmitting( false )
+          resetForm()
+          resetTable()
         }}
       >
         {
-          ({ setFieldValue, values })=>(
+          ({ setFieldValue, values})=>(
+            <> 
+            {Number(values.customerId) === 0 &&
+               <section className='validateClient' >
+                <span className="validateText" >Selecciona un cliente</span>              
+              </section >}                   
             <Form style={{ display:'flex', flexDirection:'column', justifyContent:'center'}}>
               <label htmlFor="client">Client</label>
-              <Field as="select" id="customerId" name="customerId" style={{ width:565, padding:7  }}>
+              <Field placeholder="hola" as="select" id="customerId" name="customerId" style={{ width:565, padding:7  }}>
+              <option value={0} selected> Seleccione una cliente... </option>
                 {customers.map(customer => (
                 <option value={customer.customerId} key={customer.customerId}>{customer.firstName} {customer.lastName}</option> 
                 ))}
@@ -91,9 +104,9 @@ export const ClientForm = () => {
               
               <Field component={ProductTable} name="codes" codeNames={products} />
 
-               <Button variant="outlined" type='submit'  style={{ width:600, marginTop:20}}> Send </Button>
-
+               <Button variant="outlined" type='submit' disabled={Number(values.customerId) === 0}  style={{ width:600, marginTop:20}}> Send </Button>              
           </Form>
+          </>
           )
         }
         

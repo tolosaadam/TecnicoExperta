@@ -12,7 +12,8 @@ namespace IngresoSML2.MapperProfiles
         public InvoiceProfiles()
         {
             CreateMap<Invoice, InvoiceDTO>();
-            CreateMap<InvoiceDTO, Invoice>();
+            CreateMap<InvoiceDTO, Invoice>()
+                .ForMember(src => src.Date, option => option.MapFrom(dest => dest.Date.ToString(@"MM/dd/yyyy HH:mm:ss")));
         }      
     }   
 }

@@ -33,7 +33,7 @@ export const UsePostForm = () => {
 
         var axios = require('axios');
         var data = JSON.stringify({
-        "date": new Date(),
+        "date": new Date().toDateString(),
         "customerId": Number(iDTO.customerId),
         "codes": iDTO.codes,
         "product": iDTO.product
@@ -41,7 +41,7 @@ export const UsePostForm = () => {
 
         var config = {
         method: 'post',
-        url: 'https://localhost:58514/api/invoice',
+        url: 'http://localhost:5000/api/invoice',
         headers: { 
             'Content-Type': 'application/json'
         },

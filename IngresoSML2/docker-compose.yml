@@ -6,3 +6,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      
+  ingresosml2ui:
+    image: ${DOCKER_REGISTRY-}ingresosml2ui
+    build: 
+      context: .
+      dockerfile: ../IngresoSML-UI/Dockerfile

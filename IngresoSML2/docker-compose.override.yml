@@ -8,24 +8,47 @@ services:
     environment:
       - DBHOST=database
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=https://+:443;http://+:80
     depends_on: 
       - database
     ports:
-      - "80"
-      - "443"
+      - "5000:80"
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    networks:
+      - backend
   database:
-      image: mysql:8.0.0
-      container_name: ExpertaMySQL
-      command: --skip-ssl
-      ports:
-        - "3305:3306"
-      restart: always
-      volumes:
-        - datafiles:/var/lib/mysql
-      environment:
-          MYSQL_ROOT_PASSWORD: '123456'
-          MYSQL_DATABASE: ExpertaDB
+    image: mysql:8.0.0
+    container_name: ExpertaMySQL
+    command: --skip-ssl
+    ports:
+      - "3305:3306"
+    restart: always
+    volumes:
+      - datafiles:/var/lib/mysql
+    environment:
+        MYSQL_ROOT_PASSWORD: '123456'
+        MYSQL_DATABASE: ExpertaDB
+    networks:
+      - backend
+        
+  ingresosml2ui:
+    build:
+      dockerfile: ${DOCKERFILE}
+      context: ../IngresoSML-UI
+    container_name: IngresoSML2UI
+    hostname: ingresosml2ui   
+    depends_on:
+      - ingresosml2
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    ports:
+      - 3000:3000
+    networks:
+      - frontend
+          
+networks:
+  backend:
+    driver: bridge
+  frontend:
+    driver: bridge
