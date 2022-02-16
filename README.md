@@ -9,7 +9,7 @@ _Para poder ejecutar la aplicación, solamente hay que clonar el proyecto y ejec
 
 ### Pre-requisitos 📋
 
-_Descargar Docker Desktop_
+_Descargar Docker Desktop,_
 _Descargar Visual Studio 2019_
 
 ### Instalación 🔧
