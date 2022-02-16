@@ -7,33 +7,9 @@ import { ResponseInvoiceI } from '../Interfaces/responseRequest.interfaces';
 export const UsePostForm = () => {
     
     const postInvoice = ( iDTO:ClientPostI)=>{        
-        // axios.post('https://localhost:64090/api/invoice', { 
-            
-        //     data
-        // },{
-        //     headers: {
-        //         'Accept': 'application/json',
-        //         'Content-Type': 'application/json'
-        //     }
-        // })
-        // .then( (response ) =>{ 
-        //     const responseData:ResponseInvoiceI = response.data
-            
-        //     if(responseData.isError === false){
-        //         Swal.fire({
-        //             position: 'center',
-        //             icon: 'success',
-        //             title: `The invoice has been entered correctly`,
-        //             showConfirmButton: false,
-        //             width: '400px',
-        //             timer: 3000
-        //         })
-        //     }
-        // })
-
         var axios = require('axios');
         var data = JSON.stringify({
-        "date": new Date().toDateString(),
+        "date": new Date(),
         "customerId": Number(iDTO.customerId),
         "codes": iDTO.codes,
         "product": iDTO.product
