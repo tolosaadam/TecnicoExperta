@@ -30,12 +30,13 @@ _El Proyecto cuenta con Unit tests, donde se testean los métodos de la capa Bus
 
 _Menciona las herramientas que utilizaste para crear tu proyecto_
 
-* [Docker](http://www.dropwizard.io/1.0.2/docs/) - Aplicación de containers para entornos virtuales.
-* [MySQL](https://maven.apache.org/) - Motor de base de datos.
-* [.Net Core 3.1](https://maven.apache.org/) - Framework para la API.
-* [React](https://maven.apache.org/) - El framework web usado.
-* [Visual Studio 2019](https://rometools.github.io/rome/) - Compilador para la API.
-* [Visual Studio Code](https://rometools.github.io/rome/) - Compilador para el Front End.
+* [Docker](https://www.docker.com/products/docker-desktop) - Aplicación de containers para entornos virtuales.
+* [MySQL WorkBench](https://dev.mysql.com/downloads/workbench/) - Motor de base de datos.
+* [.Net Core 3.1](https://visualstudio.microsoft.com/es/vs/older-downloads/) - Framework para la API.
+* React  - Desde linea de comando.
+* TypeScript - Desde linea de comando.
+* [Visual Studio 2019](https://visualstudio.microsoft.com/es/vs/older-downloads/) - Compilador para la API.
+* [Visual Studio Code](https://code.visualstudio.com/download) - Compilador para el Front End.
 
 ## Autores ✒️
 
