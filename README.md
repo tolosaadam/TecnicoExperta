@@ -7,12 +7,12 @@ _Proyecto Invoice, para agregar facturas con productos a determinados clientes(C
 _Para poder ejecutar la aplicación, solamente hay que clonar el proyecto y ejecutarlo en modo "Docker - compose" desde Visual Studio._
 
 
-### Pre-requisitos 📋
+## Pre-requisitos 📋
 
 _Descargar Docker Desktop,_
 _Descargar Visual Studio 2019_
 
-### Instalación 🔧
+## Instalación 🔧
 
 _Instalar Docker Desktop_
 
@@ -25,13 +25,6 @@ _Iniciar Docker Desktop, Luego abrir la solucion "IngresoSML2" con Visual Studio
 
 _El Proyecto cuenta con Unit tests, donde se testean los métodos de la capa Business de cada Clase._
 
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
-
-## Despliegue 📦
-
-_Agrega notas adicionales sobre como hacer deploy_
 
 ## Construido con 🛠️
 
@@ -46,4 +39,4 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 
 ## Autores ✒️
 
-* **Adam Ezequiel Tolosa** - *Trabajo completo* - [villanuevand](https://github.com/tolosaadam)
+* **Adam Ezequiel Tolosa** - *Trabajo completo* - [Adam Tolosa](https://github.com/tolosaadam)
