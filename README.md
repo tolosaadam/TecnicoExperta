@@ -6,8 +6,6 @@ _Proyecto Invoice, para agregar facturas con productos a determinados clientes(C
 
 _Para poder ejecutar la aplicación, solamente hay que clonar el proyecto y ejecutarlo en modo "Docker - compose" desde Visual Studio._
 
-Mira **Deployment** para conocer como desplegar el proyecto.
-
 
 ### Pre-requisitos 📋
 
