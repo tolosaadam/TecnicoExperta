@@ -20,7 +20,9 @@ _Instalar Visual Studio 2019_
 
 _Iniciar Docker Desktop, Luego abrir la solucion "IngresoSML2" con Visual Studio 2019, y ejecutarlo en modo "DockerCompose"_
 
-_Una vez Se terminen de levantar los container, ingresar en el navegador a la siguiente URL : http:localhost:4200_
+_Una vez Se terminen de levantar los container, ingresar en el navegador a la siguiente URL: http:localhost:4200_
+
+_La documentación de swagger de la API Se levanta en la siguienta URL:  http:localhost:3000_
 
 
 ## Ejecutando las pruebas ⚙️
